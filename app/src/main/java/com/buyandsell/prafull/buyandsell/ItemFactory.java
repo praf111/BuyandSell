@@ -26,14 +26,19 @@ public class ItemFactory {
         layout.setOrientation(LinearLayout.VERTICAL);
 
         headingLayout = new LinearLayout(context);
-        headingLayout.setOrientation(LinearLayout.HORIZONTAL);
+        headingLayout.setOrientation(LinearLayout.VERTICAL);
 
         ImageView icon = new ImageView(context);
         TextView title = new TextView(context);
+        TextView id = new TextView(context);
 
         title.setText(item.name);
+        id.setText("Identification: " + Long.toString(item.id));
+        id.setTag("ID");
+
         headingLayout.addView(icon);
         headingLayout.addView(title);
+        headingLayout.addView(id);
 
         TextView description = new TextView(context);
         description.setText(item.description);
